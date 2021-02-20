@@ -1,6 +1,9 @@
-const Person = () => {
+const Person = (props) => {
     return (
-        <p>I'm a Person!</p>
+        <div>
+            <p>I'm a {props.name} and I am {props.age} years old!</p>
+            <p>{props.children}</p>
+        </div>
     );
 }
 
