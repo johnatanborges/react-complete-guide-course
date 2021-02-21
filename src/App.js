@@ -1,7 +1,7 @@
 // import { Component } from 'react' ;
 import { useState } from 'react';
 import './App.css';
-import Person from './Components/Person.jsx';
+import Person from './components/Person.jsx';
 
 // -> Function component doesn't make a merge with another state (state decentralized - Create multiple useState's )
 function App() {
@@ -23,14 +23,39 @@ function App() {
         ]);
     }
 
+    const style = {
+        backgroundColor: 'white',
+        font: 'inherit',
+        border: '1px solid blue',
+        padding: '8px',
+        cursor: 'pointer',
+    }
+
     return (
         <div className="App">
             <h1>Hi, I'm a react component</h1>
             <p>This is really working!</p>
-            <button onClick={ () => switchPersonHandler('Maximilian')}>Switch Name</button>
-            <Person name={persons[0].name} age={persons[0].age} />
-            <Person name={persons[1].name} age={persons[1].age} click={switchPersonHandler.bind(this, 'John')} >My Hobbies: Racing</Person>
-            <Person name={persons[2].name} age={persons[2].age} />
+            <button
+                style={style}
+                onClick={ () => switchPersonHandler('Maximilian')}
+            >
+                Switch Name
+            </button>
+            <Person
+                name={persons[0].name}
+                age={persons[0].age}
+            />
+            <Person
+                name={persons[1].name}
+                age={persons[1].age}
+                click={switchPersonHandler.bind(this, 'John')}
+            >
+                My Hobbies: Racing
+            </Person>
+            <Person
+                name={persons[2].name}
+                age={persons[2].age}
+            />
         </div>
     );
 }
